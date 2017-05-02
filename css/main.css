@@ -1,0 +1,125 @@
+.box {
+  width: 200px;
+  height: 200px;
+  background-color: red;
+  -webkit-animation-name: anim-color;
+  -moz-animation-name: anim-color;
+  -o-animation-name: anim-color;
+  animation-name: anim-color;
+  -webkit-animation-duration: 2s;
+  -moz-animation-duration: 2s;
+  -o-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-timing-function: cubic-bezier(.42,0,.21,1.02);
+  -moz-animation-timing-function: cubic-bezier(.42,0,.21,1.02);
+  -o-animation-timing-function: cubic-bezier(.42,0,.21,1.02);
+  animation-timing-function: cubic-bezier(.42,0,.21,1.02);
+  -webkit-animation-delay: 3s;
+  -moz-animation-delay: 3s;
+  -o-animation-delay: 3s;
+  animation-delay: 3s;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  -o-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-direction: reverse;
+  -moz-animation-direction: reverse;
+  -o-animation-direction: reverse;
+  animation-direction: reverse;
+  -webkit-animation: anim-color 2s easy 1s infinity reverse;
+  -moz-animation: anim-color 2s easy 1s infinity reverse;
+  -o-animation: anim-color 2s easy 1s infinity reverse;
+  animation: anim-color 2s easy 1s infinity reverse;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  -o-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+@keyframes anim-color {
+  0% {
+    background-color: gray;
+    margin-left: 0;
+  }
+
+  to {
+    background-color: purple;
+    margin-left: 400px;
+  }
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: #fff;
+  font-family: 'Bad Script',cursive;
+}
+
+.item,
+.slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider,
+body {
+  padding: 0;
+}
+
+.item {
+  height: 100vh;
+  box-shadow: 0 0 10px rgba(0,0,0,.4);
+  flex-basis: 25%;
+  background-color: #aeaeae;
+  transition: all .2s;
+}
+
+.item:hover {
+  flex-basis: 100%;
+}
+
+.item span {
+  font-size: 2rem;
+  text-shadow: 0 0 10px #000;
+}
+
+.item-1 {
+  background: url("../img/4.jpg") no-repeat center center;
+}
+
+.item-2 {
+  background: url("../img/3.jpg") no-repeat center center;
+}
+
+.item-3 {
+  background: url("../img/2.jpg") no-repeat center center;
+}
+
+.item-4 {
+  background: url("../img/1.jpg") no-repeat center center;
+}
+
+.item-1,
+.item-2,
+.item-3,
+.item-4 {
+  background-size: cover;
+}
+
+@media (max-width:640px) {
+  .slider {
+    height: 100vh;
+    flex-flow: column;
+  }
+
+  .item {
+    width: 100%;
+  }
+
+  .item:hover {
+    flex-grow: 30%;
+  }
+}
